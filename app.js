@@ -4,9 +4,17 @@ const dotenv = require("dotenv");
 
 const mongoose = require("mongoose");
 
+const cors = require("cors");
+
 const app = express();
 //Middleware
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const categorieRouter = require("./routes/categorie.route");
 const scategorieRouter = require("./routes/scategorie.route");

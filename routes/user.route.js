@@ -114,7 +114,7 @@ router.post("/login", async (req, res) => {
           { iduser: user._id, name: user.firstname, role: user.role },
           //.SECRET must be in file .env => just a random secret
           process.env.SECRET,
-          { expiresIn: "1h" }
+          { expiresIn: "24h" }
         );
         return res.status(200).send({ success: true, user, token });
       } else {
